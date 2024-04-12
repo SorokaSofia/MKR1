@@ -15,3 +15,10 @@ def price_change_last_month(data, product_name):
 # Handle case where no data is available for the last month
 if filtered_data.empty:
     return "Немає доступних даних за останній місяць для даного товару."
+
+
+# Calculating price changes
+initial_price = filtered_data['price'].iloc[0]
+final_price = filtered_data['price'].iloc[-1]
+price_change = final_price - initial_price
+return f"Зміна ціни за останній місяць для '{product_name}': {price_change} грн"
