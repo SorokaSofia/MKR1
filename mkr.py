@@ -11,3 +11,7 @@ def price_change_last_month(data, product_name):
     one_month_ago = today - timedelta(days=30)
     filtered_data = data[(data['date'] >= one_month_ago) & (data['product_name'] == product_name)]
     return filtered_data
+
+# Handle case where no data is available for the last month
+if filtered_data.empty:
+    return "Немає доступних даних за останній місяць для даного товару."
