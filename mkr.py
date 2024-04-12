@@ -22,3 +22,8 @@ initial_price = filtered_data['price'].iloc[0]
 final_price = filtered_data['price'].iloc[-1]
 price_change = final_price - initial_price
 return f"Зміна ціни за останній місяць для '{product_name}': {price_change} грн"
+
+
+# Main script execution
+data = read_data('file.txt')
+print(price_change_last_month(data, 'Кава'))
